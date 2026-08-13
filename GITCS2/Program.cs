@@ -15,7 +15,10 @@ namespace GITCS2
         // --- Cheating Logic ---
         public void cheatinglogic()
         {
-            int posESP = 0xBDAD7C; //sempre pegar novo "valor hex" a cada atualizacao do CS.
+            int posESP = 0xBDAD7C;
+            int dwGameEntitySystem = 0x2554050;
+            int dwEntityList = 0x2554050;
+             //sempre pegar novo "valor hex" a cada atualizacao do CS.
             memoriaAvancada = new MemoriaAvancada("cs2");
             IntPtr playerEndereco = memoriaAvancada.ObterEnderecoBaseModulo("client.dll");
             IntPtr ESPendereco = playerEndereco + posESP;
@@ -34,7 +37,7 @@ namespace GITCS2
                 }
 
                 //thread pra nao travar tanto o jogo
-                Thread.Sleep(100);
+                Thread.Sleep(130);
             }
         }
        
